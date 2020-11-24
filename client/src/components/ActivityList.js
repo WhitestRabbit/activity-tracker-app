@@ -12,7 +12,7 @@ const ActivityList = () => {
 
     const fetchData = () => {
         // http://localhost:5000
-        axios.get('/activities/')
+        axios.get('https://quaractivity-tracker-app.herokuapp.com/activities/')
         .then(res => {
             if(res.data.length > 0) {
                 console.log(res.data);
@@ -26,7 +26,7 @@ const ActivityList = () => {
 
     const deleteActivity = (id) => {
         //http://localhost:5000
-        axios.delete('/activities/'+id)
+        axios.delete('https://quaractivity-tracker-app.herokuapp.com/activities/'+id)
         .then(res => console.log(res.data));
         setActivities(activities.filter(act => act._id !== id));
     }

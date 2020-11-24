@@ -14,7 +14,7 @@ const CreateActivity = (props) => {
 
     useEffect(() => {
         //http://localhost:5000
-        axios.get('/users/')
+        axios.get('https://quaractivity-tracker-app.herokuapp.com/users/')
         .then(res => {
             if(res.data.length > 0) {
                 console.log(res.data);
@@ -69,7 +69,7 @@ const CreateActivity = (props) => {
 
         console.log(activity);
         // http://localhost:5000
-        axios.post('/activities/add', activity)
+        axios.post('https://quaractivity-tracker-app.herokuapp.com/activities/add', activity)
         .then(res => console.log(res.data));
 
         window.location = '/';

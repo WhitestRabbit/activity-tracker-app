@@ -16,7 +16,7 @@ const CreateUser = () => {
         console.log(user);
 
         // http://localhost:5000
-        axios.post('/users/add', user)
+        axios.post('https://quaractivity-tracker-app.herokuapp.com/users/add', user)
         .then(res => console.log(res.data));
 
         window.location = '/';

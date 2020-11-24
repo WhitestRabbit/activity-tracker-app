@@ -14,7 +14,7 @@ const EditActivity = (props) => {
 
     useEffect(() => {
         // http://localhost:5000
-        axios.get('/activities/'+props.match.params.id)
+        axios.get('https://quaractivity-tracker-app.herokuapp.com/activities/'+props.match.params.id)
         .then(res => {
             setTitle(res.data.title);
             setDescription(res.data.description);
@@ -24,7 +24,7 @@ const EditActivity = (props) => {
             setDate(new Date(res.data.date));
         });
         // http://localhost:5000
-        axios.get('/users/')
+        axios.get('https://quaractivity-tracker-app.herokuapp.com/users/')
         .then(res => {
             if(res.data.length > 0) {
                 console.log(res.data);
@@ -75,7 +75,7 @@ const EditActivity = (props) => {
         console.log(activity);
 
         // http://localhost:5000
-        axios.post('/activities/edit/'+props.match.params.id, activity)
+        axios.post('https://quaractivity-tracker-app.herokuapp.com/activities/edit/'+props.match.params.id, activity)
         .then(res => console.log(res.data));
 
         window.location = '/';
