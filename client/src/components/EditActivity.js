@@ -34,7 +34,7 @@ const EditActivity = (props) => {
                 console.log("No users were returned.");
             }
         });
-    }, []);
+    }, [props.match.params.id]);
 
     const changeTitle = (e) => {
         setTitle(e.target.value);
