@@ -24,9 +24,6 @@ connection.once('open', () => {
 
 app.use(express.static('client/build'));
 
-app.get('/', (req, res) => { 
-    res.send('Hello from Express!')});
-
 //Routes for activities and users interaction
 app.use('/activities', require('./routes/activities'));
 app.use('/users', require('./routes/users'));
