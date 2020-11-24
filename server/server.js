@@ -22,6 +22,8 @@ connection.once('open', () => {
     console.log('Connected with MongoDB successfully');
 });
 
+app.use(express.static('client/build'));
+
 //Routes for activities and users interaction
 app.use('/activities', require('./routes/activities'));
 app.use('/users', require('./routes/users'));

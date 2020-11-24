@@ -1,8 +1,12 @@
 {
-  "name": "backend",
+  "name": "server",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
+  "engines": {
+    "node": "12.x",
+    "npm": "6.14.x"
+  },
   "scripts": {
     "start": "nodemon server"
   },

@@ -10,12 +10,9 @@ const ActivityList = () => {
         fetchData();
     }, []);
 
-    // useEffect(() => {
-    //     fetchData();
-    // }, [activities]);
-
     const fetchData = () => {
-        axios.get('http://localhost:5000/activities/')
+        // http://localhost:5000
+        axios.get('/activities/')
         .then(res => {
             if(res.data.length > 0) {
                 console.log(res.data);
@@ -28,7 +25,8 @@ const ActivityList = () => {
     }
 
     const deleteActivity = (id) => {
-        axios.delete('http://localhost:5000/activities/'+id)
+        //http://localhost:5000
+        axios.delete('/activities/'+id)
         .then(res => console.log(res.data));
         setActivities(activities.filter(act => act._id !== id));
     }

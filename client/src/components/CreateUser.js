@@ -15,7 +15,8 @@ const CreateUser = () => {
 
         console.log(user);
 
-        axios.post('http://localhost:5000/users/add', user)
+        // http://localhost:5000
+        axios.post('/users/add', user)
         .then(res => console.log(res.data));
 
         window.location = '/';

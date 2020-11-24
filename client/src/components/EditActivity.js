@@ -13,7 +13,8 @@ const EditActivity = (props) => {
     const [users, setUsers] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:5000/activities/'+props.match.params.id)
+        // http://localhost:5000
+        axios.get('/activities/'+props.match.params.id)
         .then(res => {
             setTitle(res.data.title);
             setDescription(res.data.description);
@@ -22,7 +23,8 @@ const EditActivity = (props) => {
             setDuration(res.data.duration);
             setDate(new Date(res.data.date));
         });
-        axios.get('http://localhost:5000/users/')
+        // http://localhost:5000
+        axios.get('/users/')
         .then(res => {
             if(res.data.length > 0) {
                 console.log(res.data);
@@ -31,12 +33,7 @@ const EditActivity = (props) => {
             } else {
                 console.log("No users were returned.");
             }
-            // const users = [res.data];
-            // setUsers(users);
-            // setUsername(users[0]);
         });
-        // setUsers(['stefanos', 'nikos']);
-        // setUsername('stefanos');
     }, []);
 
     const changeTitle = (e) => {
@@ -77,7 +74,8 @@ const EditActivity = (props) => {
 
         console.log(activity);
 
-        axios.post('http://localhost:5000/activities/edit/'+props.match.params.id, activity)
+        // http://localhost:5000
+        axios.post('/activities/edit/'+props.match.params.id, activity)
         .then(res => console.log(res.data));
 
         window.location = '/';
